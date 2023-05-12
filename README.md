@@ -30,20 +30,20 @@
 }
 ```
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/users (GET)**, I want to have the possibility
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/users (GET)**, I want to have the possibility
   to get all users with the ability to sort them by age (query parameters). Return only user id, fullName, email and age fields.
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/users (POST)**, I want to create new user document,
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/users (POST)**, I want to create new user document,
   so that I can have the possibility to find it in mongodb users collection.
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (PUT)**, I want to have the possibility
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (PUT)**, I want to have the possibility
   to edit user document fields (firstName, lastName, age, don't forget to regenerate fullName).
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (GET)**, I want to have possibility
+- Conpleted Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (GET)**, I want to have possibility
   to get information about any user by passing specific user id as an api parameter.
   (Response also should contain all articles that user created, only title, subtitle and created date fields).
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (DELETE)**, I want to have possibility
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/users/:userId (DELETE)**, I want to have possibility
   to remove specific user from mongodb and all articles that he created.
 
 2. Implement CRUD for articles
@@ -64,11 +64,11 @@
 }
 ```
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/articles (POST)**, I want to create new article.
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/articles (POST)**, I want to create new article.
   Before creating new article, you should check if owner exist.
   (Don't forget that all your articles should have reference to specific user - **_owner_** field, and also after creating new article, increment **_numberOfArticles_** field for that user).
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/articles/:articleId (PUT)**, I want to have possibility
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/articles/:articleId (PUT)**, I want to have possibility
   to edit any article document. Before you make update action, you should always check if article / user exist, and only
   after that start updating document. Only owner can update the article.
 
