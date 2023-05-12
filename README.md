@@ -72,13 +72,14 @@
   to edit any article document. Before you make update action, you should always check if article / user exist, and only
   after that start updating document. Only owner can update the article.
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/articles (GET)**,
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/articles (GET)**,
   I want to have the possibility to search for articles using **title**.
   Add the pagination for the results (using page and limit query params)
   (Also you should populate owner field (return only fullName, email and age fields)).
 
-- Using [Postman](https://www.getpostman.com/), and api endpoint **/articles/:articleId (DELETE)**,
-  I want to have possibility to delete any article from database. (Don't forget to decrement **_numberOfArticles_** field for user that created this article). Only owner can delete the article
+- Completed Using [Postman](https://www.getpostman.com/), and api endpoint **/articles/:articleId (DELETE)**,
+  I want to have possibility to delete any article from database. (Don't forget to decrement **_numberOfArticles_**
+- field for user that created this article). Only owner can delete the article
 
 3. Not required!
 
