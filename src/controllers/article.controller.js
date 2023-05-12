@@ -3,15 +3,48 @@ import User from '../models/user.model.js';
 
 export const getArticles = async (req, res, next) => {
     try {
+        const {title, page = 1, limit = 10} = req.query;
 
-    } catch (err) {
+        // Create a query object with the search criteria
+        const query = {};
+        if (title) {
+            query.title = {$regex: title, $options: 'i'};
+        }
+
+        // Count total matching articles (for pagination)
+        const totalCount = await Article.countDocuments(query);
+
+        // Execute the query with pagination options
+        const articles = await Article.find(query)
+            .populate('owner', 'fullName email age')
+            .select('title subtitle createdAt')
+            .skip((page - 1) * limit)
+            .limit(limit);
+
+        res.status(200).json({
+            totalCount,
+            totalPages: Math.ceil(totalCount / limit),
+            currentPage: page,
+            articles
+        });
+    }
+    catch (err) {
         next(err);
     }
 }
 
 export const getArticleById = async (req, res, next) => {
     try {
+        const articleId = req.params.id;
 
+        // Find the article by its ID and populate the owner field
+        const article = await Article.findOne({ _id: articleId }).populate('owner');
+
+        if (!article) {
+            return res.status(404).json({ message: 'Article not found' });
+        }
+
+        res.status(200).json(article);
     } catch (err) {
         next(err);
     }
